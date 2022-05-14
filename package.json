@@ -1,8 +1,8 @@
 {
   "name": "e-comerse_webapp_backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "e-comerse_webapp_backend",
+  "main": "App.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
