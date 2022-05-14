@@ -1,17 +1,16 @@
 const express= require('express')
 const connect  = require("./src/configs/db/db")
-require('dotenv').config()
-
-
-
 const app=express()
 const port=process.env.PORT
 
+app.use(express.json())
 
+//routes
+const {registerValidator,registerValidatorResult}=require('./src/middlewares/validators/regesterValidator')
+const regesterController=require('./src/controllers/authController/registerController')
+app.post("/regester",registerValidator,registerValidatorResult,regesterController)
 
-
-
-
+//server 
 app.listen(port,async()=>{
     try {
         await connect()
@@ -21,5 +20,6 @@ app.listen(port,async()=>{
         console.log(e.message)
     } 
 })
+
 
 
