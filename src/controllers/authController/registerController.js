@@ -7,6 +7,6 @@ module.exports=async(req,res)=>{
         return res.status(201).send("success")
 
     } catch (e) {
-        res.send(e.message)
+        res.staus(500).send(e.message)
     }
 }

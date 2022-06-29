@@ -10,6 +10,11 @@ const {registerValidator,registerValidatorResult}=require('./src/middlewares/val
 const regesterController=require('./src/controllers/authController/registerController')
 app.post("/regester",registerValidator,registerValidatorResult,regesterController)
 
+
+//admin routes
+const AdminLoginController=require('./src/controllers/authController/AdminLoginController')
+app.post('/admin',AdminLoginController)
+
 //server 
 app.listen(port,async()=>{
     try {
