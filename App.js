@@ -16,7 +16,7 @@ const AdminLoginController=require('./src/controllers/authController/AdminLoginC
 app.post('/admin',AdminLoginController)
 
  app.get('/',(req,res)=>{
-    res.sent('lk')
+    res.send('lk')
  })
 
 
