@@ -1,6 +1,7 @@
 const express= require('express')
 const connect  = require("./src/configs/db/db")
 const app=express()
+require('dotenv').config()
 const port=process.env.PORT
 
 app.use(express.json())
@@ -14,6 +15,12 @@ app.post("/regester",registerValidator,registerValidatorResult,regesterControlle
 //admin routes
 const AdminLoginController=require('./src/controllers/authController/AdminLoginController')
 app.post('/admin',AdminLoginController)
+
+ app.get('/',(req,res)=>{
+    res.send('lk')
+ })
+
+
 
 //server 
 app.listen(port,async()=>{
