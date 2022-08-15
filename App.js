@@ -15,6 +15,12 @@ app.post("/regester",registerValidator,registerValidatorResult,regesterControlle
 const AdminLoginController=require('./src/controllers/authController/AdminLoginController')
 app.post('/admin',AdminLoginController)
 
+ app.get('/',(req,res)=>{
+    res.sent('lk')
+ })
+
+
+
 //server 
 app.listen(port,async()=>{
     try {
