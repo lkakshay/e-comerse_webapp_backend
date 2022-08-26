@@ -9,17 +9,21 @@ app.use(express.json())
 //routes
 const {registerValidator,registerValidatorResult}=require('./src/middlewares/validators/regesterValidator')
 const regesterController=require('./src/controllers/authController/registerController')
-app.post("/regester",registerValidator,registerValidatorResult,regesterController)
+app.post("/api/regester",registerValidator,registerValidatorResult,regesterController)
 
 
 //admin routes
 const AdminLoginController=require('./src/controllers/authController/AdminLoginController')
-app.post('/admin',AdminLoginController)
+app.post('/api/admin',AdminLoginController)
 
  app.get('/',(req,res)=>{
     res.send('lk')
  })
 
+
+ //product routes
+ app.use('/api/product')
+ 
 
 
 //server 
