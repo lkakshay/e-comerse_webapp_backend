@@ -22,7 +22,9 @@ app.post('/api/admin',AdminLoginController)
 
 
  //product routes
- app.use('/api/product')
+
+ const productController=require('./src/controllers/productController')
+ app.use('/api/products',productController)
  
 
 

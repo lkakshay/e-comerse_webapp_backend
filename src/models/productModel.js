@@ -10,15 +10,14 @@ ProductSchema=new mongoose.Schema(
         images:{type:Array,required:true},
         isprime:{type:Boolean,required:true},
         description:{type:String,required:true},
-        overall_rating:{type:Number,required:true},
+        rating:{type:Number,required:true},
         prime:{type:Boolean,required:true},
-        specifications:{type:Object,required:true},
-          
+        brand:{type:"string",required:true},    
      },
      {
          versionKey:false,
          timestamps:true
      }
-)
+) 
 
 module.exports=mongoose.model("Product",ProductSchema)
