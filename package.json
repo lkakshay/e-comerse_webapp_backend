@@ -4,7 +4,7 @@
   "description": "e-comerse_webapp_backend",
   "main": "App.js",
   "scripts": {
-    "start":"node App.js",
+    "start": "node App.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/lkakshay/E-Comerse_webApp_Backend#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "express-validator": "^6.14.0",
