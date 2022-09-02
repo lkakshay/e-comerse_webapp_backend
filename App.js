@@ -15,7 +15,7 @@ app.use(express.json())
 //routes
 const {registerValidator,registerValidatorResult}=require('./src/middlewares/validators/regesterValidator')
 const regesterController=require('./src/controllers/authController/registerController')
-app.post("/api/regester",registerValidator,registerValidatorResult,regesterController)
+app.post("/api/register",registerValidator,registerValidatorResult,regesterController)
 
 
 //admin routes
