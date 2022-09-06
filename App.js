@@ -12,24 +12,21 @@ app.use(cors({
 
 app.use(express.json())
 
-//routes
+//auth routes
 const {registerValidator,registerValidatorResult}=require('./src/middlewares/validators/regesterValidator')
 const regesterController=require('./src/controllers/authController/registerController')
 app.post("/api/register",registerValidator,registerValidatorResult,regesterController)
 
+const loginController=require('./src/controllers/authController/loginController')
+app.post('/api/login',loginController)
 
-//admin routes
-const AdminLoginController=require('./src/controllers/authController/AdminLoginController')
-app.post('/api/admin',AdminLoginController)
 
- app.get('/',(req,res)=>{
-    res.send('lk')
- })
+
 
 
  //product routes
 
- const productController=require('./src/controllers/productController')
+const productController=require('./src/controllers/productController')
  app.use('/api/products',productController)
  
 
