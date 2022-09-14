@@ -5,7 +5,7 @@ const createToken = require('../../utils/helpers/createToken')
 
 
 module.exports=async(req,res)=>{
-    console.log(req.body)
+
 
    
     try {
@@ -21,7 +21,7 @@ module.exports=async(req,res)=>{
 
        const token=createToken(user)
 
-        return res.status(200).send({name:user.name,token})
+        return res.status(200).send({name:user.name,token,userId:user._id})
 
 
     } catch (e) {
