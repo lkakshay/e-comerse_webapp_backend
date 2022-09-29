@@ -29,6 +29,12 @@ app.post(
 const loginController = require("./src/controllers/authController/loginController");
 app.post("/api/login", loginController);
 
+//test
+app.get('/',async(req,res)=>{
+  return res.send('server started')
+})
+
+
 //product routes
 
 const productController = require("./src/controllers/productController");
