@@ -7,7 +7,7 @@ const port = process.env.PORT;
 const cors = require("cors");
 app.use(
   cors({
-    origin: process.env.ORIGIN
+    origin:process.env.ORIGIN
   })
 );
 
@@ -31,7 +31,7 @@ app.post("/api/login", loginController);
 
 //test
 app.get('/',async(req,res)=>{
-  return res.send('server started')
+  return res.send(process.env.ORIGIN)
 })
 
 
