@@ -3,7 +3,8 @@ const Cart = require("../models/cartModel");
 const router = express.Router();
 
 router.post("/add", async (req, res) => {
-  if (!req.body.verifyStatus) return res.send(401).send("invalid token");
+  if (!req.body.verifyStatus)
+  return res.status(401).send("invalid token");
 
   const { product_id, user_id } = req.body;
   const count = 1;
@@ -19,7 +20,8 @@ router.post("/add", async (req, res) => {
 });
 
 router.get("/items", async (req, res) => {
-  if (!req.body.verifyStatus) return res.send(401).send("invalid token");
+  if (!req.body.verifyStatus) 
+  return res.status(401).send("invalid token");
   try {
     const cartItems = await Cart.find({
       $and: [
@@ -37,7 +39,8 @@ router.get("/items", async (req, res) => {
   }
 });
 router.get("/later/items", async (req, res) => {
-  if (!req.body.verifyStatus) return res.send(401).send("invalid token");
+  if (!req.body.verifyStatus) 
+  return res.status(401).send("invalid token");
   try {
     const cartItems = await Cart.find({
       $and: [{ user_id: req.body.user_id }, { later: true }, { status: false }],
@@ -52,7 +55,8 @@ router.get("/later/items", async (req, res) => {
 });
 
 router.patch("/update", async (req, res) => {
-  if (!req.body.verifyStatus) return res.send(401).send("invalid token");
+  if (!req.body.verifyStatus) 
+  return res.status(401).send("invalid token");
 
   try {
     const data = await Cart.findByIdAndUpdate(
@@ -66,7 +70,8 @@ router.patch("/update", async (req, res) => {
 });
 
 router.delete("/delete", async (req, res) => {
-    if (!req.body.verifyStatus) return res.send(401).send("invalid token");
+    if (!req.body.verifyStatus) 
+    return res.status(401).send("invalid token");
 
     try {
       const data = await Cart.findByIdAndDelete(req.query.id)

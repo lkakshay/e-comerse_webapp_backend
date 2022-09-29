@@ -21,7 +21,7 @@ module.exports=async(req,res)=>{
 
        const token=createToken(user)
 
-        return res.status(200).send({name:user.name,token,userId:user._id})
+        return res.status(200).send({name:user.name,token})
 
 
     } catch (e) {
